@@ -1,8 +1,15 @@
-package org.apache.jdo.tck.pc.company;
+package org.apache.jdo.tck.pc.company.q;
 
-import org.datanucleus.api.jdo.query.*;
+import org.apache.jdo.tck.pc.company.Employee;
+import org.datanucleus.api.jdo.query.CollectionExpressionImpl;
+import org.datanucleus.api.jdo.query.DateTimeExpressionImpl;
+import org.datanucleus.api.jdo.query.ExpressionType;
+import org.datanucleus.api.jdo.query.NumericExpressionImpl;
 
-import javax.jdo.query.*;
+import javax.jdo.query.CollectionExpression;
+import javax.jdo.query.DateTimeExpression;
+import javax.jdo.query.NumericExpression;
+import javax.jdo.query.PersistableExpression;
 
 public class QEmployee extends QPerson
 {
@@ -50,7 +57,7 @@ public class QEmployee extends QPerson
         this.weeklyhours = new NumericExpressionImpl(this, "weeklyhours");
         if (depth > 0)
         {
-            this.dentalInsurance = new org.apache.jdo.tck.pc.company.QDentalInsurance(this, "dentalInsurance", depth-1);
+            this.dentalInsurance = new QDentalInsurance(this, "dentalInsurance", depth-1);
         }
         else
         {
@@ -58,7 +65,7 @@ public class QEmployee extends QPerson
         }
         if (depth > 0)
         {
-            this.medicalInsurance = new org.apache.jdo.tck.pc.company.QMedicalInsurance(this, "medicalInsurance", depth-1);
+            this.medicalInsurance = new QMedicalInsurance(this, "medicalInsurance", depth-1);
         }
         else
         {
@@ -82,7 +89,7 @@ public class QEmployee extends QPerson
         }
         if (depth > 0)
         {
-            this.manager = new org.apache.jdo.tck.pc.company.QEmployee(this, "manager", depth-1);
+            this.manager = new QEmployee(this, "manager", depth-1);
         }
         else
         {
@@ -90,7 +97,7 @@ public class QEmployee extends QPerson
         }
         if (depth > 0)
         {
-            this.mentor = new org.apache.jdo.tck.pc.company.QEmployee(this, "mentor", depth-1);
+            this.mentor = new QEmployee(this, "mentor", depth-1);
         }
         else
         {
@@ -98,7 +105,7 @@ public class QEmployee extends QPerson
         }
         if (depth > 0)
         {
-            this.protege = new org.apache.jdo.tck.pc.company.QEmployee(this, "protege", depth-1);
+            this.protege = new QEmployee(this, "protege", depth-1);
         }
         else
         {
@@ -106,7 +113,7 @@ public class QEmployee extends QPerson
         }
         if (depth > 0)
         {
-            this.hradvisor = new org.apache.jdo.tck.pc.company.QEmployee(this, "hradvisor", depth-1);
+            this.hradvisor = new QEmployee(this, "hradvisor", depth-1);
         }
         else
         {
@@ -123,14 +130,14 @@ public class QEmployee extends QPerson
         super(type, name, exprType);
         this.hiredate = new DateTimeExpressionImpl(this, "hiredate");
         this.weeklyhours = new NumericExpressionImpl(this, "weeklyhours");
-        this.dentalInsurance = new org.apache.jdo.tck.pc.company.QDentalInsurance(this, "dentalInsurance", 5);
-        this.medicalInsurance = new org.apache.jdo.tck.pc.company.QMedicalInsurance(this, "medicalInsurance", 5);
-        this.department = new org.apache.jdo.tck.pc.company.QDepartment(this, "department", 5);
-        this.fundingDept = new org.apache.jdo.tck.pc.company.QDepartment(this, "fundingDept", 5);
-        this.manager = new org.apache.jdo.tck.pc.company.QEmployee(this, "manager", 5);
-        this.mentor = new org.apache.jdo.tck.pc.company.QEmployee(this, "mentor", 5);
-        this.protege = new org.apache.jdo.tck.pc.company.QEmployee(this, "protege", 5);
-        this.hradvisor = new org.apache.jdo.tck.pc.company.QEmployee(this, "hradvisor", 5);
+        this.dentalInsurance = new QDentalInsurance(this, "dentalInsurance", 5);
+        this.medicalInsurance = new QMedicalInsurance(this, "medicalInsurance", 5);
+        this.department = new QDepartment(this, "department", 5);
+        this.fundingDept = new QDepartment(this, "fundingDept", 5);
+        this.manager = new QEmployee(this, "manager", 5);
+        this.mentor = new QEmployee(this, "mentor", 5);
+        this.protege = new QEmployee(this, "protege", 5);
+        this.hradvisor = new QEmployee(this, "hradvisor", 5);
         this.reviewedProjects = new CollectionExpressionImpl(this, "reviewedProjects");
         this.projects = new CollectionExpressionImpl(this, "projects");
         this.team = new CollectionExpressionImpl(this, "team");

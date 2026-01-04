@@ -1,10 +1,13 @@
-package org.apache.jdo.tck.pc.company;
+package org.apache.jdo.tck.pc.company.q;
 
-import org.datanucleus.api.jdo.query.*;
+import org.apache.jdo.tck.pc.company.MedicalInsurance;
+import org.datanucleus.api.jdo.query.ExpressionType;
+import org.datanucleus.api.jdo.query.StringExpressionImpl;
 
-import javax.jdo.query.*;
+import javax.jdo.query.PersistableExpression;
+import javax.jdo.query.StringExpression;
 
-public class QMedicalInsurance extends org.apache.jdo.tck.pc.company.QInsurance
+public class QMedicalInsurance extends QInsurance
 {
     public static final QMedicalInsurance jdoCandidate = candidate("this");
 

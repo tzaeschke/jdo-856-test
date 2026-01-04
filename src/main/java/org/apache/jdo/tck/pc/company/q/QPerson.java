@@ -1,5 +1,6 @@
-package org.apache.jdo.tck.pc.company;
+package org.apache.jdo.tck.pc.company.q;
 
+import org.apache.jdo.tck.pc.company.Person;
 import org.datanucleus.api.jdo.query.*;
 
 import javax.jdo.query.*;

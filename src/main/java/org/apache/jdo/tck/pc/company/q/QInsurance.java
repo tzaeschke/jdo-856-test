@@ -1,9 +1,14 @@
-package org.apache.jdo.tck.pc.company;
+package org.apache.jdo.tck.pc.company.q;
 
+import org.apache.jdo.tck.pc.company.Insurance;
+import org.datanucleus.api.jdo.query.ExpressionType;
+import org.datanucleus.api.jdo.query.NumericExpressionImpl;
 import org.datanucleus.api.jdo.query.PersistableExpressionImpl;
-import org.datanucleus.api.jdo.query.*;
+import org.datanucleus.api.jdo.query.StringExpressionImpl;
 
-import javax.jdo.query.*;
+import javax.jdo.query.NumericExpression;
+import javax.jdo.query.PersistableExpression;
+import javax.jdo.query.StringExpression;
 
 public class QInsurance extends PersistableExpressionImpl<Insurance> implements PersistableExpression<Insurance>
 {

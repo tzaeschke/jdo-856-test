@@ -1,5 +1,7 @@
-package org.apache.jdo.tck.pc.company;
+package org.apache.jdo.tck.pc.company.q;
 
+import org.apache.jdo.tck.pc.company.Address;
+import org.apache.jdo.tck.pc.company.Company;
 import org.datanucleus.api.jdo.query.*;
 
 import javax.jdo.query.*;
@@ -40,7 +42,7 @@ public class QCompany extends PersistableExpressionImpl<Company> implements Pers
         this.companyid = new NumericExpressionImpl(this, "companyid");
         this.name = new StringExpressionImpl(this, "name");
         this.founded = new DateTimeExpressionImpl(this, "founded");
-        this.address = new ObjectExpressionImpl<org.apache.jdo.tck.pc.company.Address>(this, "address");
+        this.address = new ObjectExpressionImpl<Address>(this, "address");
         this.departments = new CollectionExpressionImpl(this, "departments");
     }
 
@@ -50,7 +52,7 @@ public class QCompany extends PersistableExpressionImpl<Company> implements Pers
         this.companyid = new NumericExpressionImpl(this, "companyid");
         this.name = new StringExpressionImpl(this, "name");
         this.founded = new DateTimeExpressionImpl(this, "founded");
-        this.address = new ObjectExpressionImpl<org.apache.jdo.tck.pc.company.Address>(this, "address");
+        this.address = new ObjectExpressionImpl<Address>(this, "address");
         this.departments = new CollectionExpressionImpl(this, "departments");
     }
 }

@@ -6,10 +6,11 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MiniTest {
+
+    private static int pass = 0;
 
     @Test
     void test() throws InterruptedException {
@@ -37,10 +38,13 @@ class MiniTest {
             t.join(1000);
             assertFalse(t.isAlive());
         }
+
+        assertEquals(1, pass);
     }
 
     void testA1() {
         assertNotNull(QCompany.candidate());
+        pass++;
     }
 
     void testA2() {

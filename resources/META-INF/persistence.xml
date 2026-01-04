@@ -1,0 +1,29 @@
+
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+
+    <!-- JDO tutorial "unit" -->
+    <persistence-unit name="Tutorial">
+        <class>org.apache.jdo.tck.pc.company.Company</class>
+        <class>org.apache.jdo.tck.pc.company.Project</class>
+        <class>org.apache.jdo.tck.pc.company.Department</class>
+        <class>org.apache.jdo.tck.pc.company.Insurance</class>
+        <class>org.apache.jdo.tck.pc.company.DentalInsurance</class>
+        <class>org.apache.jdo.tck.pc.company.Address</class>
+        <class>org.apache.jdo.tck.pc.company.Employee</class>
+        <class>org.apache.jdo.tck.pc.company.FullTimeEmployee</class>
+        <class>org.apache.jdo.tck.pc.company.Person</class>
+        <class>org.apache.jdo.tck.pc.company.MedicalInsurance</class>
+        <class>org.apache.jdo.tck.pc.company.MeetingRoom</class>
+        <class>org.apache.jdo.tck.pc.company.PartTimeEmployee</class>
+        <exclude-unlisted-classes/>
+        <properties>
+            <!-- Properties for runtime configuration will be added here later, see below -->
+        </properties>
+    </persistence-unit>
+</persistence>
+

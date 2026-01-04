@@ -1,8 +1,14 @@
-package org.apache.jdo.tck.pc.company;
+package org.apache.jdo.tck.pc.company.q;
 
-import org.datanucleus.api.jdo.query.*;
+import org.apache.jdo.tck.pc.company.MeetingRoom;
+import org.datanucleus.api.jdo.query.ExpressionType;
+import org.datanucleus.api.jdo.query.NumericExpressionImpl;
+import org.datanucleus.api.jdo.query.PersistableExpressionImpl;
+import org.datanucleus.api.jdo.query.StringExpressionImpl;
 
-import javax.jdo.query.*;
+import javax.jdo.query.NumericExpression;
+import javax.jdo.query.PersistableExpression;
+import javax.jdo.query.StringExpression;
 
 public class QMeetingRoom extends PersistableExpressionImpl<MeetingRoom> implements PersistableExpression<MeetingRoom>
 {

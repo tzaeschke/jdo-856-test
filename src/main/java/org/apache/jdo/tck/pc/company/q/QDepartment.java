@@ -1,6 +1,6 @@
-package org.apache.jdo.tck.pc.company;
+package org.apache.jdo.tck.pc.company.q;
 
-import org.datanucleus.api.jdo.query.ListExpressionImpl;
+import org.apache.jdo.tck.pc.company.Department;
 import org.datanucleus.api.jdo.query.*;
 
 import javax.jdo.query.*;
@@ -68,8 +68,8 @@ public class QDepartment extends PersistableExpressionImpl<Department> implement
         super(type, name, exprType);
         this.deptid = new NumericExpressionImpl(this, "deptid");
         this.name = new StringExpressionImpl(this, "name");
-        this.company = new org.apache.jdo.tck.pc.company.QCompany(this, "company", 5);
-        this.employeeOfTheMonth = new org.apache.jdo.tck.pc.company.QEmployee(this, "employeeOfTheMonth", 5);
+        this.company = new QCompany(this, "company", 5);
+        this.employeeOfTheMonth = new QEmployee(this, "employeeOfTheMonth", 5);
         this.employees = new CollectionExpressionImpl(this, "employees");
         this.fundedEmps = new CollectionExpressionImpl(this, "fundedEmps");
         this.meetingRooms = new ListExpressionImpl(this, "meetingRooms");
