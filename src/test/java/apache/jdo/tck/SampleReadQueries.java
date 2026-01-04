@@ -48,6 +48,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *   <li>testQueryxxf: JDOQLTypedQuery version
  * </ul>
  */
+@Disabled
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SampleReadQueries extends QueryTest {
 

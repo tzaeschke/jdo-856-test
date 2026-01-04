@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class MiniTest {
-    
+
     @Test
     void test() throws InterruptedException {
         List<Thread> threads = new ArrayList<>();
@@ -18,7 +18,7 @@ class MiniTest {
         // Create Threads for each candidate() method.
         // The methods are implemented in separate methods to avoid the classloader
         // loading the respective Q-classes.
-        threads.add(new Thread(this::testA1));
+        threads.add(new Thread(this::testA1)); // This is the candidate() that is usually involved in hangs.
         threads.add(new Thread(this::testA2));
         threads.add(new Thread(this::testA3));
         threads.add(new Thread(this::testA4));
