@@ -36,6 +36,7 @@ class MiniTest {
 
         for (Thread t : threads) {
             t.join(1000);
+            // If this fails then the threads hang (-> deadlock)!
             assertFalse(t.isAlive());
         }
 
