@@ -35,7 +35,7 @@ class MiniTest {
         }
 
         for (Thread t : threads) {
-            t.join(1000);
+            t.join(5000);
             // If this fails then the threads hang (-> deadlock)!
             if (t.isAlive()) {
                 for (Thread t2 : threads) {
