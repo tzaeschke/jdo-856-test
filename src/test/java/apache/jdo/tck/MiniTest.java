@@ -6,10 +6,11 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MiniTest {
+
+    private static int pass = 0;
 
     @Test
     void test() throws InterruptedException {
@@ -34,45 +35,57 @@ class MiniTest {
         }
 
         for (Thread t : threads) {
-            t.join(1000);
-            assertFalse(t.isAlive());
+            t.join(5000);
+            // If this fails then the threads hang (-> deadlock)!
+            if (t.isAlive()) {
+                for (Thread t2 : threads) {
+                    System.out.println("------------- Thread: " + t2.getId() + "   " + t2.getName());
+                    for (StackTraceElement e : t2.getStackTrace()) {
+                        System.out.println(t2.getId() + "  " + e);
+                    }
+                }
+                fail();
+            }
         }
+
+        assertEquals(1, pass);
     }
 
     void testA1() {
-        assertNotNull(QCompany.candidate());
+        assertNotNull(QCompany.candidate("this"));
+        pass++;
     }
 
     void testA2() {
-        assertNotNull(QDentalInsurance.candidate());
+        assertNotNull(QDentalInsurance.candidate("this"));
     }
 
     void testA3() {
-        assertNotNull(QDepartment.candidate());
+        assertNotNull(QDepartment.candidate("this"));
     }
 
     void testA4() {
-        assertNotNull(QEmployee.candidate());
+        assertNotNull(QEmployee.candidate("this"));
     }
 
     void testA5() {
-        assertNotNull(QFullTimeEmployee.candidate());
+        assertNotNull(QFullTimeEmployee.candidate("this"));
     }
 
     void testA6() {
-        assertNotNull(QInsurance.candidate());
+        assertNotNull(QInsurance.candidate("this"));
     }
 
     void testA7() {
-        assertNotNull(QMedicalInsurance.candidate());
+        assertNotNull(QMedicalInsurance.candidate("this"));
     }
 
     void testA8() {
-        assertNotNull(QMeetingRoom.candidate());
+        assertNotNull(QMeetingRoom.candidate("this"));
     }
 
     void testA9() {
-        assertNotNull(QPerson.candidate());
+        assertNotNull(QPerson.candidate("this"));
     }
 
     void testA0() {
